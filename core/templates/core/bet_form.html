@@ -1,0 +1,22 @@
+{% load dict_tags %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    
+    {% for category in categories_list %}
+        
+        <h1>{{ category.name }}</h1>
+        
+        <select name="{{category.pk}}"> 
+            {% for nominee in nominees_list %}
+                {% if nominee.nominee_type == category.category_type %}
+                    {% with category.pk as c %}
+                    <option value="{{ nominee.pk }}" {% if user_bets|keyvalue:c == nominee.pk %} selected="selected" {% endif %}> {{ nominee.name }}</option>
+                    {% endwith %}
+                {% endif %}
+            {% endfor %}
+        </select>
+    
+    {% endfor %}
+    <input type="submit" value="enviar" />
+</form>

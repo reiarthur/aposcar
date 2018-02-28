@@ -1,0 +1,8 @@
+<h1> sanity check </h1>
+
+{% if user.is_authenticated %}
+    <p>Olá {{user}}</p>
+    <a href="{% url 'accounts:logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'accounts:login' %}">Login</a>
+{% endif %}
