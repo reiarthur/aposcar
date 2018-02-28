@@ -4,38 +4,39 @@
   -moz-osx-font-smoothing: grayscale; }
 
 html, body {
-  margin: 0; }
+  margin: 0;
+  font-family: 'Roboto', sans-serif; }
+
+nav {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  color: white;
+  width: 100%;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 16px 0; }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 48px; }
+    nav ul li {
+      list-style: none; }
+      nav ul li:first-of-type {
+        margin-right: auto; }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 16px; }
 
 #hero {
   position: relative;
-  height: 80vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://pandorablogsite.files.wordpress.com/2017/01/sala.jpg");
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/sala.jpg");
   background-size: cover, cover;
   display: flex;
   justify-content: center;
   align-items: center; }
-  #hero nav {
-    background: transparent;
-    position: absolute;
-    top: 0;
-    color: white;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    padding: 16px 0; }
-    #hero nav ul {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 48px; }
-      #hero nav ul li {
-        list-style: none; }
-        #hero nav ul li:first-of-type {
-          margin-right: auto; }
-        #hero nav ul li a {
-          text-decoration: none;
-          color: white;
-          padding: 8px 16px; }
   #hero .content {
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -45,6 +46,68 @@ html, body {
       font-weight: 500; }
     #hero .content h4 {
       margin-bottom: 48px; }
+
+#login-body {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/curtain.jpg");
+  background-size: cover, cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  #login-body #login-card {
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: white;
+    padding: 24px 40px 40px 40px;
+    width: 300px;
+    box-shadow: -18px 19px 31px rgba(0, 0, 0, 0.3); }
+    #login-body #login-card h1 {
+      text-align: center;
+      margin-top: 0;
+      color: #b39700;
+      font-weight: 300; }
+    #login-body #login-card form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 32px; }
+      #login-body #login-card form .errorlist {
+        list-style: none;
+        font-size: 0.7em;
+        background-color: rgba(255, 0, 0, 0.1);
+        border: 1px solid #cc0000;
+        border-radius: 2px;
+        padding: 8px 16px;
+        margin-top: 0;
+        text-transform: lowercase; }
+      #login-body #login-card form label {
+        text-transform: uppercase;
+        font-size: 0.7em; }
+      #login-body #login-card form input {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 2px;
+        background-color: #EEEEEE;
+        font-family: 'Roboto', sans-serif;
+        outline: transparent;
+        margin-bottom: 16px; }
+      #login-body #login-card form input[type='submit'] {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        border: none;
+        background-color: #b39700;
+        border-radius: 4px;
+        padding: 8px 16px;
+        box-shadow: 0 0 8px 4px rgba(187, 162, 103, 0.16);
+        transition: all ease 0.25s;
+        margin-top: 24px;
+        cursor: pointer; }
+        #login-body #login-card form input[type='submit']:hover {
+          box-shadow: 0 0 21px 7px rgba(187, 162, 103, 0.18);
+          transition: all ease 0.25s; }
+    #login-body #login-card p {
+      font-size: 0.8em;
+      margin: 0; }
 
 .cta-button {
   text-decoration: none;

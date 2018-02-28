@@ -1,17 +1,38 @@
-<form action="" method="post">
-    {% csrf_token %}
-    
-    {{ form.non_field_errors }}
-    
-    {% for field in form %}
-    
-        {{ field.label_tag }}
-        {{ field }}
-        {{ field.erros }}
-        
-    {% endfor %}
-    
-    <input type="submit" value="Logar" />
-</form>
+{% extends 'core/base.html' %}
 
-<p>Não é cadastrado? <a href="{% url 'accounts:signup' %}">Cadastre-se</a></p>
+{% block content %}
+<div id="login-body">
+    <nav>
+        <ul>
+            <li>Aposcar!</li>
+            <li><a href="{% url 'core:index' %}">Início</a></li>
+            <li><a href="{% url 'accounts:login' %}">Login</a></li>
+        </ul>
+    </nav>
+    
+    <div id="login-card">
+        <h1>aposcar!</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            {{ form.non_field_errors }}
+            
+            {% for field in form %}
+            
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+                
+            {% endfor %}
+            
+            <input type="submit" value="logar!" />
+        </form>
+        
+        <p><a href="{% url 'accounts:signup' %}">ainda não é cadastrado?</a></p>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
