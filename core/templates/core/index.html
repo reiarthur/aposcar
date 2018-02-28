@@ -1,8 +1,29 @@
-<h1> sanity check </h1>
+{% extends 'core/base.html' %}
 
-{% if user.is_authenticated %}
-    <p>Olá {{user}}</p>
-    <a href="{% url 'accounts:logout' %}">Logout</a>
-{% else %}
-<a href="{% url 'accounts:login' %}">Login</a>
-{% endif %}
+{% block content %}
+
+
+<div id="hero">
+    <nav>
+        <ul>
+            <li>Aposcar!</li>
+            <li><a href='/'>Início</a></li>
+            {% if not user.is_authenticated %}
+            <li><a href="">Meu Perfil</a></li>
+            {% else %}
+            <li><a href="{% url 'accounts:login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <div class="content">
+        <h1>um sistema de apostas para o oscar</h1>
+        <p>venha tentar prever quem serão os vencedores do maior
+        prêmio de cinema mundial
+        </p>
+        <h4>ps: somente pela diversão, sem investimentos financeiros (~˘▾˘)~</h4>
+        <a href="{% url 'accounts:signup' %}" class="cta-button">quero apostar!</a>
+    </div>
+</div>
+
+{% endblock %}

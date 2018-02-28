@@ -1,0 +1,80 @@
+$gold: #BBA267;
+$grey: #EEEEEE;
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    margin: 0;
+}
+
+#hero {
+    position: relative;
+    height: 80vh;
+    background-image: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)), url('https://pandorablogsite.files.wordpress.com/2017/01/sala.jpg');
+    background-size: cover, cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    nav {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        color: white;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        padding: 16px 0;
+        
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 48px;
+            li {
+                list-style: none;
+                &:first-of-type {
+                    margin-right: auto;
+                }
+                a {
+                    text-decoration: none;
+                    color: white;
+                    padding: 8px 16px;
+                }
+            }
+        }
+    }
+    
+    .content {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+        h1 {
+            font-weight: 500;
+        }
+        h4 {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.cta-button {
+    text-decoration: none;
+    color: white;
+    //border: 1px solid white;
+    background-color: darken(gold, 15%);
+    border-radius: 4px;
+    padding: 8px 16px;
+    box-shadow: 0 0 8px 4px rgba($gold,0.16);
+    transition: all ease 0.25s;
+    &:hover {
+        box-shadow: 0 0 21px 7px rgba($gold,0.18);
+        transition: all ease 0.25s;
+    }
+}
