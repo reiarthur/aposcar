@@ -11,14 +11,14 @@ from django.urls import reverse_lazy
 from .forms import *
 
 class LoginView(liv):
-    template_name = 'accounts/login.html'
+    template_name = 'accounts/login_register.html'
     
 class LogoutView(lov):
     next_page = reverse_lazy('core:index')
 
 class RegisterView(FormView):
     form_class = RegisterForm
-    template_name = 'accounts/register.html'
+    template_name = 'accounts/login_register.html'
     success_url = reverse_lazy('core:index')
     
     def form_valid(self, form):

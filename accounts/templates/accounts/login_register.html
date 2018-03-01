@@ -25,10 +25,19 @@
                 
             {% endfor %}
             
-            <input type="submit" value="logar!" />
+            <input type="submit" 
+            {% if request.path == "/accounts/login/" %}
+            value="logar!"
+            {% elif request.path == '/accounts/signup/' %}
+            value="registrar!"
+            {% endif %}/>
         </form>
         
+        {% if request.path == "/accounts/login/" %}
         <p><a href="{% url 'accounts:signup' %}">ainda não é cadastrado?</a></p>
+        {% elif request.path == '/accounts/signup/' %}
+        <p><a href="{% url 'accounts:login' %}">já é cadastrado?</a></p>
+        {% endif %}
     </div>
 </div>
 
